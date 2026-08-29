@@ -121,78 +121,179 @@
           <span class="text-[0.78rem] font-medium text-white/60">Blog</span>
         </nav>
         <h1 class="font-display font-extrabold text-[clamp(2rem,4vw,3rem)] text-white leading-tight mb-3">Blog</h1>
-        <p class="text-white/70 text-[1.05rem] leading-relaxed max-w-[540px]">Momentos que fazem parte da nossa história. Fotos e eventos do Colégio Helena.</p>
+        <p class="text-white/70 text-[1.05rem] leading-relaxed max-w-[540px]">Fique por dentro de tudo o que acontece no Colégio Helena e em toda a nossa comunidade.</p>
       </div>
     </section>
 
     <!-- ============ TABS ============ -->
     <section class="py-[clamp(4rem,8vw,7rem)]">
       <div class="max-w-[1200px] w-[92%] mx-auto">
-        <div class="text-center max-w-[600px] mx-auto mb-8 reveal">
-          <span class="inline-flex items-center gap-2 text-[0.7rem] font-bold tracking-[0.18em] uppercase text-brand mb-3 before:content-[''] before:w-5 before:h-0.5 before:rounded-full before:bg-gradient-to-r before:from-brand before:to-red">Fotos &amp; Eventos</span>
-          <h2 class="font-display font-extrabold text-[clamp(1.6rem,3.5vw,2.5rem)] leading-[1.15] tracking-tight text-ink mb-3">Momentos que marcam nossa história</h2>
+        <div class="flex gap-2 mb-8 flex-wrap justify-center reveal" id="blog-filters">
+          <button data-filter="todas" type="button" class="px-5 py-2.5 rounded-full text-[0.85rem] font-semibold bg-ink text-white transition-all border-none cursor-pointer">Todas</button>
+          <button data-filter="Notícias" type="button" class="px-5 py-2.5 rounded-full text-[0.85rem] font-semibold bg-mist text-ink-soft transition-all border-none cursor-pointer hover:text-ink">Notícias</button>
+          <button data-filter="Avisos" type="button" class="px-5 py-2.5 rounded-full text-[0.85rem] font-semibold bg-mist text-ink-soft transition-all border-none cursor-pointer hover:text-ink">Avisos</button>
+          <button data-filter="Galerias" type="button" class="px-5 py-2.5 rounded-full text-[0.85rem] font-semibold bg-mist text-ink-soft transition-all border-none cursor-pointer hover:text-ink">Galerias</button>
+          <button data-filter="Eventos" type="button" class="px-5 py-2.5 rounded-full text-[0.85rem] font-semibold bg-mist text-ink-soft transition-all border-none cursor-pointer hover:text-ink">Eventos</button>
         </div>
 
-        <div class="flex gap-2 mb-8 flex-wrap justify-center reveal" data-tabs>
-          <button data-tab="todas" type="button" class="px-5 py-2.5 rounded-full text-[0.85rem] font-semibold bg-ink text-white transition-all border-none cursor-pointer">Todas</button>
-          <button data-tab="galeria" type="button" class="px-5 py-2.5 rounded-full text-[0.85rem] font-semibold bg-mist text-ink-soft transition-all border-none cursor-pointer hover:text-ink">Galerias</button>
-          <button data-tab="evento" type="button" class="px-5 py-2.5 rounded-full text-[0.85rem] font-semibold bg-mist text-ink-soft transition-all border-none cursor-pointer hover:text-ink">Eventos</button>
+        <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-12 gap-4">
+            <article class="blog-post bg-white rounded-3xl overflow-hidden border border-line transition-all duration-300 hover:shadow-lg hover:-translate-y-1" data-category="Notícias">
+              <div class="blog-img overflow-hidden"><img src="assets/img/stock/ensino.jpg" alt="Matrículas abertas para 2026" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" /></div>
+              <div class="p-5">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="inline-block px-2.5 py-1 text-[0.68rem] font-bold rounded-full bg-brand-soft text-brand">Notícias</span>
+                  <span class="text-[0.72rem] text-ink-faint font-semibold">12 de agosto de 2026</span>
+                </div>
+                <h3 class="font-display font-bold text-[0.98rem] text-ink mb-2 leading-snug">Matrículas abertas para 2026</h3>
+                <p class="text-[0.82rem] text-ink-soft leading-relaxed">Garanta a vaga do seu filho no Colégio Helena para o próximo ano letivo. Vagas limitadas por turma.</p>
+              </div>
+            </article>
+            <article class="blog-post bg-white rounded-3xl overflow-hidden border border-line transition-all duration-300 hover:shadow-lg hover:-translate-y-1" data-category="Notícias">
+              <div class="blog-img overflow-hidden"><img src="assets/img/estrutura.jpg" alt="Colégio amplia infraestrutura esportiva" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" /></div>
+              <div class="p-5">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="inline-block px-2.5 py-1 text-[0.68rem] font-bold rounded-full bg-brand-soft text-brand">Notícias</span>
+                  <span class="text-[0.72rem] text-ink-faint font-semibold">05 de agosto de 2026</span>
+                </div>
+                <h3 class="font-display font-bold text-[0.98rem] text-ink mb-2 leading-snug">Colégio amplia infraestrutura esportiva</h3>
+                <p class="text-[0.82rem] text-ink-soft leading-relaxed">Novas quadras e espaços de convivência foram entregues para toda a comunidade escolar.</p>
+              </div>
+            </article>
+            <article class="blog-post bg-white rounded-3xl overflow-hidden border border-line transition-all duration-300 hover:shadow-lg hover:-translate-y-1" data-category="Notícias">
+              <div class="blog-img overflow-hidden"><img src="assets/img/stock/sobre.jpg" alt="Alunos conquistam medalhas na Olimpíada de Matemática" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" /></div>
+              <div class="p-5">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="inline-block px-2.5 py-1 text-[0.68rem] font-bold rounded-full bg-brand-soft text-brand">Notícias</span>
+                  <span class="text-[0.72rem] text-ink-faint font-semibold">28 de julho de 2026</span>
+                </div>
+                <h3 class="font-display font-bold text-[0.98rem] text-ink mb-2 leading-snug">Alunos conquistam medalhas na Olimpíada de Matemática</h3>
+                <p class="text-[0.82rem] text-ink-soft leading-relaxed">Nossos estudantes se destacaram e trouxeram medalhas para casa. Parabéns!</p>
+              </div>
+            </article>
+            <article class="blog-post bg-white rounded-3xl overflow-hidden border border-line transition-all duration-300 hover:shadow-lg hover:-translate-y-1" data-category="Notícias">
+              <div class="blog-img overflow-hidden"><img src="assets/img/stock/blog.jpg" alt="Projeto de robótica é destaque em feira de tecnologia" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" /></div>
+              <div class="p-5">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="inline-block px-2.5 py-1 text-[0.68rem] font-bold rounded-full bg-brand-soft text-brand">Notícias</span>
+                  <span class="text-[0.72rem] text-ink-faint font-semibold">15 de julho de 2026</span>
+                </div>
+                <h3 class="font-display font-bold text-[0.98rem] text-ink mb-2 leading-snug">Projeto de robótica é destaque em feira de tecnologia</h3>
+                <p class="text-[0.82rem] text-ink-soft leading-relaxed">O projeto da turma de robótica foi apresentado em feira regional e chamou a atenção do público.</p>
+              </div>
+            </article>
+            <article class="blog-post bg-white rounded-3xl overflow-hidden border border-line transition-all duration-300 hover:shadow-lg hover:-translate-y-1" data-category="Avisos">
+              <div class="blog-img overflow-hidden"><img src="assets/img/stock/secretaria.jpg" alt="Feriado municipal: não haverá aulas" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" /></div>
+              <div class="p-5">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="inline-block px-2.5 py-1 text-[0.68rem] font-bold rounded-full bg-blue-soft text-blue">Avisos</span>
+                  <span class="text-[0.72rem] text-ink-faint font-semibold">01 de setembro de 2026</span>
+                </div>
+                <h3 class="font-display font-bold text-[0.98rem] text-ink mb-2 leading-snug">Feriado municipal: não haverá aulas</h3>
+                <p class="text-[0.82rem] text-ink-soft leading-relaxed">Em virtude do feriado municipal, as aulas serão suspensas nesta data. Até o retorno!</p>
+              </div>
+            </article>
+            <article class="blog-post bg-white rounded-3xl overflow-hidden border border-line transition-all duration-300 hover:shadow-lg hover:-translate-y-1" data-category="Avisos">
+              <div class="blog-img overflow-hidden"><img src="assets/img/stock/estrutura.jpg" alt="Inscrições abertas para os projetos extracurriculares" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" /></div>
+              <div class="p-5">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="inline-block px-2.5 py-1 text-[0.68rem] font-bold rounded-full bg-blue-soft text-blue">Avisos</span>
+                  <span class="text-[0.72rem] text-ink-faint font-semibold">20 de agosto de 2026</span>
+                </div>
+                <h3 class="font-display font-bold text-[0.98rem] text-ink mb-2 leading-snug">Inscrições abertas para os projetos extracurriculares</h3>
+                <p class="text-[0.82rem] text-ink-soft leading-relaxed">Esportes, robótica, música, dança e muito mais. Garanta a vaga do seu filho.</p>
+              </div>
+            </article>
+            <article class="blog-post bg-white rounded-3xl overflow-hidden border border-line transition-all duration-300 hover:shadow-lg hover:-translate-y-1" data-category="Avisos">
+              <div class="blog-img overflow-hidden"><img src="assets/img/stock/contato.jpg" alt="Entrega de boletins: confira o calendário" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" /></div>
+              <div class="p-5">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="inline-block px-2.5 py-1 text-[0.68rem] font-bold rounded-full bg-blue-soft text-blue">Avisos</span>
+                  <span class="text-[0.72rem] text-ink-faint font-semibold">10 de agosto de 2026</span>
+                </div>
+                <h3 class="font-display font-bold text-[0.98rem] text-ink mb-2 leading-snug">Entrega de boletins: confira o calendário</h3>
+                <p class="text-[0.82rem] text-ink-soft leading-relaxed">Os boletins do trimestre serão entregues conforme o calendário divulgado pela Secretaria.</p>
+              </div>
+            </article>
+            <article class="blog-post bg-white rounded-3xl overflow-hidden border border-line transition-all duration-300 hover:shadow-lg hover:-translate-y-1" data-category="Galerias">
+              <div class="blog-img overflow-hidden"><img src="assets/img/student-image1.png" alt="Fevereiro de 2025" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" /></div>
+              <div class="p-5">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="inline-block px-2.5 py-1 text-[0.68rem] font-bold rounded-full bg-mist text-ink-soft">Galerias</span>
+                  <span class="text-[0.72rem] text-ink-faint font-semibold">Fevereiro 2025</span>
+                </div>
+                <h3 class="font-display font-bold text-[0.98rem] text-ink mb-2 leading-snug">Fevereiro de 2025</h3>
+                <p class="text-[0.82rem] text-ink-soft leading-relaxed">As melhores fotos do início do ano letivo.</p>
+              </div>
+            </article>
+            <article class="blog-post bg-white rounded-3xl overflow-hidden border border-line transition-all duration-300 hover:shadow-lg hover:-translate-y-1" data-category="Galerias">
+              <div class="blog-img overflow-hidden"><img src="assets/img/student-image2.png" alt="Maio de 2025" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" /></div>
+              <div class="p-5">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="inline-block px-2.5 py-1 text-[0.68rem] font-bold rounded-full bg-mist text-ink-soft">Galerias</span>
+                  <span class="text-[0.72rem] text-ink-faint font-semibold">Maio 2025</span>
+                </div>
+                <h3 class="font-display font-bold text-[0.98rem] text-ink mb-2 leading-snug">Maio de 2025</h3>
+                <p class="text-[0.82rem] text-ink-soft leading-relaxed">Registros dos projetos e atividades do mês.</p>
+              </div>
+            </article>
+            <article class="blog-post bg-white rounded-3xl overflow-hidden border border-line transition-all duration-300 hover:shadow-lg hover:-translate-y-1" data-category="Galerias">
+              <div class="blog-img overflow-hidden"><img src="assets/img/estrutura.jpg" alt="Agosto de 2025" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" /></div>
+              <div class="p-5">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="inline-block px-2.5 py-1 text-[0.68rem] font-bold rounded-full bg-mist text-ink-soft">Galerias</span>
+                  <span class="text-[0.72rem] text-ink-faint font-semibold">Agosto 2025</span>
+                </div>
+                <h3 class="font-display font-bold text-[0.98rem] text-ink mb-2 leading-snug">Agosto de 2025</h3>
+                <p class="text-[0.82rem] text-ink-soft leading-relaxed">As melhores fotos das nossas atividades de agosto.</p>
+              </div>
+            </article>
+            <article class="blog-post bg-white rounded-3xl overflow-hidden border border-line transition-all duration-300 hover:shadow-lg hover:-translate-y-1" data-category="Galerias">
+              <div class="blog-img overflow-hidden"><img src="assets/img/stock/blog.jpg" alt="Setembro de 2025" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" /></div>
+              <div class="p-5">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="inline-block px-2.5 py-1 text-[0.68rem] font-bold rounded-full bg-mist text-ink-soft">Galerias</span>
+                  <span class="text-[0.72rem] text-ink-faint font-semibold">Setembro 2025</span>
+                </div>
+                <h3 class="font-display font-bold text-[0.98rem] text-ink mb-2 leading-snug">Setembro de 2025</h3>
+                <p class="text-[0.82rem] text-ink-soft leading-relaxed">Um mês cheio de momentos especiais.</p>
+              </div>
+            </article>
+            <article class="blog-post bg-white rounded-3xl overflow-hidden border border-line transition-all duration-300 hover:shadow-lg hover:-translate-y-1" data-category="Eventos">
+              <div class="blog-img overflow-hidden"><img src="assets/img/hero-image.png" alt="Arraiá 2025" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" /></div>
+              <div class="p-5">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="inline-block px-2.5 py-1 text-[0.68rem] font-bold rounded-full bg-red-soft text-red">Eventos</span>
+                  <span class="text-[0.72rem] text-ink-faint font-semibold">Junho 2025</span>
+                </div>
+                <h3 class="font-display font-bold text-[0.98rem] text-ink mb-2 leading-snug">Arraiá 2025</h3>
+                <p class="text-[0.82rem] text-ink-soft leading-relaxed">Os melhores momentos da nossa festa junina.</p>
+              </div>
+            </article>
+            <article class="blog-post bg-white rounded-3xl overflow-hidden border border-line transition-all duration-300 hover:shadow-lg hover:-translate-y-1" data-category="Eventos">
+              <div class="blog-img overflow-hidden"><img src="assets/img/stock/sobre.jpg" alt="Semana Cultural" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" /></div>
+              <div class="p-5">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="inline-block px-2.5 py-1 text-[0.68rem] font-bold rounded-full bg-red-soft text-red">Eventos</span>
+                  <span class="text-[0.72rem] text-ink-faint font-semibold">Maio 2025</span>
+                </div>
+                <h3 class="font-display font-bold text-[0.98rem] text-ink mb-2 leading-snug">Semana Cultural</h3>
+                <p class="text-[0.82rem] text-ink-soft leading-relaxed">Apresentações e exposições dos alunos.</p>
+              </div>
+            </article>
+            <article class="blog-post bg-white rounded-3xl overflow-hidden border border-line transition-all duration-300 hover:shadow-lg hover:-translate-y-1" data-category="Eventos">
+              <div class="blog-img overflow-hidden"><img src="assets/img/stock/ensino.jpg" alt="Feira de Ciências 2025" loading="lazy" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" /></div>
+              <div class="p-5">
+                <div class="flex items-center justify-between mb-2">
+                  <span class="inline-block px-2.5 py-1 text-[0.68rem] font-bold rounded-full bg-red-soft text-red">Eventos</span>
+                  <span class="text-[0.72rem] text-ink-faint font-semibold">Outubro 2025</span>
+                </div>
+                <h3 class="font-display font-bold text-[0.98rem] text-ink mb-2 leading-snug">Feira de Ciências 2025</h3>
+                <p class="text-[0.82rem] text-ink-soft leading-relaxed">Projetos científicos desenvolvidos pelos estudantes.</p>
+              </div>
+            </article>
         </div>
 
-        <div data-panel="todas" class="block">
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
-            <article class="md:col-span-7 bg-white rounded-3xl overflow-hidden border border-line transition-all duration-300 hover:shadow-lg hover:-translate-y-1 reveal">
-              <div class="h-[200px] overflow-hidden"><img src="assets/img/student-image1.png" alt="Alunos em atividade" class="w-full h-full object-cover" loading="lazy" /></div>
-              <div class="p-5"><h3 class="font-display font-bold text-base text-ink mb-3">Fevereiro de 2025</h3><p class="text-[0.85rem] text-ink-soft">As melhores fotos do mês.</p></div>
-            </article>
-            <article class="md:col-span-5 bg-white rounded-3xl overflow-hidden border border-line transition-all duration-300 hover:shadow-lg hover:-translate-y-1 reveal" data-delay="1">
-              <div class="h-[200px] overflow-hidden"><img src="assets/img/student-image2.png" alt="Estudantes no colégio" class="w-full h-full object-cover" loading="lazy" /></div>
-              <div class="p-5"><h3 class="font-display font-bold text-base text-ink mb-3">Maio de 2025</h3><p class="text-[0.85rem] text-ink-soft">As melhores fotos do mês.</p></div>
-            </article>
-            <article class="md:col-span-5 bg-white rounded-3xl overflow-hidden border border-line transition-all duration-300 hover:shadow-lg hover:-translate-y-1 reveal" data-delay="2">
-              <div class="h-[200px] overflow-hidden"><img src="assets/img/hero-image.png" alt="Arraiá do Colégio Helena" class="w-full h-full object-cover" loading="lazy" /></div>
-              <div class="p-5"><span class="inline-block px-2.5 py-1 text-[0.7rem] font-bold rounded-full bg-red-soft text-red mb-2">Evento</span><h3 class="font-display font-bold text-base text-ink mb-3">Arraiá 2025</h3><p class="text-[0.85rem] text-ink-soft">Os melhores momentos do arraiá.</p></div>
-            </article>
-            <article class="md:col-span-7 bg-white rounded-3xl overflow-hidden border border-line transition-all duration-300 hover:shadow-lg hover:-translate-y-1 reveal" data-delay="3">
-              <div class="h-[200px] overflow-hidden"><img src="assets/img/estrutura.jpg" alt="Estrutura do colégio" class="w-full h-full object-cover" loading="lazy" /></div>
-              <div class="p-5"><h3 class="font-display font-bold text-base text-ink mb-3">Agosto de 2025</h3><p class="text-[0.85rem] text-ink-soft">As melhores fotos do mês.</p></div>
-            </article>
-          </div>
-        </div>
-
-        <div data-panel="galeria" class="hidden">
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
-            <article class="md:col-span-7 bg-white rounded-3xl overflow-hidden border border-line transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-              <div class="h-[200px] overflow-hidden"><img src="assets/img/student-image1.png" alt="Galerias" class="w-full h-full object-cover" loading="lazy" /></div>
-              <div class="p-5"><h3 class="font-display font-bold text-base text-ink mb-3">Fevereiro de 2025</h3><p class="text-[0.85rem] text-ink-soft">As melhores fotos do mês.</p></div>
-            </article>
-            <article class="md:col-span-5 bg-white rounded-3xl overflow-hidden border border-line transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-              <div class="h-[200px] overflow-hidden"><img src="assets/img/student-image2.png" alt="Galerias" class="w-full h-full object-cover" loading="lazy" /></div>
-              <div class="p-5"><h3 class="font-display font-bold text-base text-ink mb-3">Maio de 2025</h3><p class="text-[0.85rem] text-ink-soft">As melhores fotos do mês.</p></div>
-            </article>
-            <article class="md:col-span-5 bg-white rounded-3xl overflow-hidden border border-line transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-              <div class="h-[200px] overflow-hidden"><img src="assets/img/estrutura.jpg" alt="Estrutura" class="w-full h-full object-cover" loading="lazy" /></div>
-              <div class="p-5"><h3 class="font-display font-bold text-base text-ink mb-3">Agosto de 2025</h3><p class="text-[0.85rem] text-ink-soft">As melhores fotos do mês.</p></div>
-            </article>
-            <article class="md:col-span-7 bg-white rounded-3xl overflow-hidden border border-line transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-              <div class="h-[200px] overflow-hidden"><img src="assets/img/stock/blog.jpg" alt="Blog" class="w-full h-full object-cover" loading="lazy" /></div>
-              <div class="p-5"><h3 class="font-display font-bold text-base text-ink mb-3">Setembro de 2025</h3><p class="text-[0.85rem] text-ink-soft">As melhores fotos do mês.</p></div>
-            </article>
-          </div>
-        </div>
-
-        <div data-panel="evento" class="hidden">
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
-            <article class="md:col-span-7 bg-white rounded-3xl overflow-hidden border border-line transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-              <div class="h-[200px] overflow-hidden"><img src="assets/img/hero-image.png" alt="Arraiá do Colégio Helena" class="w-full h-full object-cover" loading="lazy" /></div>
-              <div class="p-5"><span class="inline-block px-2.5 py-1 text-[0.7rem] font-bold rounded-full bg-red-soft text-red mb-2">Evento</span><h3 class="font-display font-bold text-base text-ink mb-3">Arraiá 2025</h3><p class="text-[0.85rem] text-ink-soft">Os melhores momentos do arraiá.</p></div>
-            </article>
-            <article class="md:col-span-5 bg-white rounded-3xl overflow-hidden border border-line transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-              <div class="h-[200px] overflow-hidden"><img src="assets/img/stock/sobre.jpg" alt="Evento" class="w-full h-full object-cover" loading="lazy" /></div>
-              <div class="p-5"><span class="inline-block px-2.5 py-1 text-[0.7rem] font-bold rounded-full bg-red-soft text-red mb-2">Evento</span><h3 class="font-display font-bold text-base text-ink mb-3">Semana Cultural</h3><p class="text-[0.85rem] text-ink-soft">Apresentações e exposições dos alunos.</p></div>
-            </article>
-          </div>
-        </div>
+        <nav id="blog-pagination" class="flex items-center justify-center gap-2 mt-10 reveal" aria-label="Paginação"></nav>
 
         <div class="bg-gradient-to-br from-ink to-ink-2 rounded-[32px] p-[clamp(2.5rem,5vw,4rem)] flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden reveal mt-24">
           <div class="absolute right-[-2rem] bottom-[-1.5rem] font-display font-extrabold text-[12rem] text-white/[0.03] leading-none pointer-events-none select-none">HELENA</div>
@@ -261,7 +362,7 @@
           <h4 class="font-display font-bold text-[0.85rem] text-gray-200 mb-4">Endereço</h4>
           <ul class="space-y-2.5">
             <li class="flex gap-2.5 text-[0.85rem]"><ion-icon name="location-outline" class="text-base text-brand mt-0.5 flex-shrink-0"></ion-icon><span>Rua Alan Kardec, 410<br />Vila Industrial, Pirassununga / SP</span></li>
-            <li class="flex gap-2.5 text-[0.85rem]"><ion-icon name="logo-whatsapp" class="text-base text-brand mt-0.5 flex-shrink-0"></ion-icon><a href="https://api.whatsapp.com/send/?phone=5519989502031" class="hover:text-brand transition-colors">(19) 98950-2031</a></li>
+            <li class="flex gap-2.5 text-[0.85rem]"><ion-icon name="logo-whatsapp" class="text-base text-brand mt-0.5 flex-shrink-0"></ion-icon><a href="https://api.whatsapp.com/send/?phone=5519989502031" target="_blank" rel="noopener" class="hover:text-brand transition-colors">(19) 98950-2031</a></li>
             <li class="flex gap-2.5 text-[0.85rem]"><ion-icon name="mail-outline" class="text-base text-brand mt-0.5 flex-shrink-0"></ion-icon><a href="mailto:contato@colegiohelena.com.br" class="hover:text-brand transition-colors">contato@colegiohelena.com.br</a></li>
           </ul>
         </div>
@@ -318,7 +419,7 @@
   </div>
 
   <!-- ===================== WHATSAPP FLOAT ===================== -->
-  <a href="https://api.whatsapp.com/send/?phone=5519989502031" class="whatsapp-float fixed bottom-6 left-6 w-[52px] h-[52px] bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg shadow-[#25D366]/35 z-[900] transition-all duration-300 hover:scale-110 hover:shadow-xl hover:shadow-[#25D366]/45" aria-label="Fale conosco no WhatsApp">
+  <a href="https://api.whatsapp.com/send/?phone=5519989502031" target="_blank" rel="noopener" class="whatsapp-float fixed bottom-6 left-6 w-[52px] h-[52px] bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg shadow-[#25D366]/35 z-[900] transition-all duration-300 hover:scale-110 hover:shadow-xl hover:shadow-[#25D366]/45" aria-label="Fale conosco no WhatsApp">
     <ion-icon name="logo-whatsapp" class="text-[26px]"></ion-icon>
   </a>
 

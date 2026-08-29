@@ -742,23 +742,33 @@
 
     var widget = document.createElement("div");
     widget.id = "wa-widget";
-    widget.className = "fixed bottom-24 left-6 z-[2000] w-[320px] max-w-[calc(100vw-2rem)] bg-white rounded-3xl shadow-2xl border border-line hidden flex-col overflow-hidden";
+    widget.className = "fixed bottom-24 left-6 z-[2000] w-[340px] max-w-[calc(100vw-2rem)] bg-white rounded-3xl shadow-2xl border border-line flex flex-col overflow-hidden opacity-0 invisible translate-y-3 scale-95 transition-all duration-300 origin-bottom-left";
     widget.innerHTML =
-      '<div class="flex items-center justify-between bg-[#25D366] px-5 py-4">' +
+      '<div class="flex items-center justify-between bg-[#075E54] px-4 py-3">' +
         '<div class="flex items-center gap-3">' +
-          '<span class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center"><ion-icon name="logo-whatsapp" class="text-white text-xl"></ion-icon></span>' +
-          '<div><p class="text-white font-bold text-[0.9rem]">Colégio Helena</p><p class="text-white/80 text-[0.72rem]">Atendimento pela Secretaria</p></div>' +
+          '<span class="relative w-10 h-10 rounded-full bg-white/15 flex items-center justify-center flex-shrink-0"><ion-icon name="logo-whatsapp" class="text-white text-xl"></ion-icon></span>' +
+          '<div><p class="text-white font-semibold text-[0.9rem] leading-tight">Colégio Helena</p><p class="text-[#b3e5a8] text-[0.72rem]">online</p></div>' +
         '</div>' +
-        '<button class="wa-close w-8 h-8 rounded-full bg-white/20 text-white flex items-center justify-center hover:bg-white/30 transition-colors" aria-label="Fechar chat"><ion-icon name="close-outline" class="text-lg"></ion-icon></button>' +
+        '<button class="wa-close w-9 h-9 rounded-full bg-white/15 text-white flex items-center justify-center hover:bg-white/25 transition-colors" aria-label="Fechar chat"><ion-icon name="close-outline" class="text-xl"></ion-icon></button>' +
       '</div>' +
-      '<div class="px-4 py-3 bg-mist">' +
-        '<div class="bg-white rounded-xl rounded-tl-sm shadow-sm px-4 py-3 text-[0.85rem] text-ink-soft">Olá! Como podemos ajudar?</div>' +
+      '<div class="flex-1 px-3 py-3 space-y-2 bg-[#e5ddd5] min-h-[200px] max-h-[260px] overflow-y-auto">' +
+        '<div class="text-center"><span class="inline-block text-[0.68rem] text-ink-faint bg-white/70 rounded-full px-2.5 py-0.5">Hoje</span></div>' +
+        '<div class="flex justify-start">' +
+          '<div class="bg-white rounded-xl rounded-tl-none px-3 py-2 shadow-sm max-w-[85%]"><p class="text-[0.82rem] text-ink leading-relaxed">Olá! 👋<br/>Sou a Secretaria do Colégio Helena. Como podemos ajudar?</p></div>' +
+        '</div>' +
+        '<div class="flex justify-end">' +
+          '<div class="bg-[#dcf8c6] rounded-xl rounded-tr-none px-3 py-2 shadow-sm max-w-[85%]"><p class="text-[0.82rem] text-ink leading-relaxed">Digite sua mensagem abaixo 👇</p></div>' +
+        '</div>' +
       '</div>' +
-      '<div class="p-4 border-t border-line flex flex-col gap-3">' +
-        '<textarea rows="3" placeholder="Digite sua mensagem..." class="w-full px-4 py-3 border-[1.5px] border-line rounded-xl text-[0.85rem] text-ink outline-none transition-all focus:border-[#25D366] focus:shadow-[0_0_0_3px_rgba(37,211,102,0.15)] resize-none min-h-[80px]"></textarea>' +
-        '<button class="wa-send w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-[#25D366] text-white text-[0.9rem] font-semibold hover:brightness-95 transition-all">Iniciar conversa <ion-icon name="arrow-forward"></ion-icon></button>' +
-        '<p class="text-[0.7rem] text-ink-faint text-center">Ao enviar, você será redirecionado para o WhatsApp.</p>' +
-      '</div>';
+      '<div class="bg-mist border-t border-line p-2 flex items-center gap-2">' +
+        '<textarea rows="1" placeholder="Digite sua mensagem..." class="flex-1 px-4 py-2.5 bg-white border border-line rounded-full text-[0.85rem] text-ink outline-none transition-all focus:border-[#075E54] resize-none max-h-24 min-h-[44px]" style="line-height:1.4"></textarea>' +
+        '<button class="wa-send w-11 h-11 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:brightness-95 transition-all flex-shrink-0" aria-label="Enviar"><ion-icon name="send" class="text-lg"></ion-icon></button>' +
+      '</div>' +
+      '<p class="bg-[#075E54] text-white/70 text-center text-[0.68rem] py-1.5 px-3">Atendimento: seg. a sex., 7h às 17h</p>';
+    var backdrop = document.createElement("div");
+    backdrop.id = "wa-backdrop";
+    backdrop.className = "fixed inset-0 bg-black/30 backdrop-blur-sm z-[1999] opacity-0 invisible transition-all duration-300";
+    document.body.appendChild(backdrop);
     document.body.appendChild(widget);
 
     var textarea = widget.querySelector("textarea");
@@ -766,13 +776,13 @@
     var closeBtn = widget.querySelector(".wa-close");
 
     function openWidget() {
-      widget.classList.remove("hidden");
-      widget.classList.add("flex");
+      backdrop.classList.remove("opacity-0", "invisible");
+      widget.classList.remove("opacity-0", "invisible", "translate-y-3", "scale-95");
       textarea.focus();
     }
     function closeWidget() {
-      widget.classList.add("hidden");
-      widget.classList.remove("flex");
+      backdrop.classList.add("opacity-0", "invisible");
+      widget.classList.add("opacity-0", "invisible", "translate-y-3", "scale-95");
     }
     function send() {
       var msg = textarea.value.trim();
@@ -785,17 +795,122 @@
 
     waFloat.addEventListener("click", function (e) {
       e.preventDefault();
-      if (widget.classList.contains("hidden")) openWidget();
+      if (widget.classList.contains("invisible")) openWidget();
       else closeWidget();
     });
     document.querySelectorAll('.quick-dock__item[href*="api.whatsapp.com"]').forEach(function (a) {
       a.addEventListener("click", function (e) { e.preventDefault(); openWidget(); });
     });
     if (closeBtn) closeBtn.addEventListener("click", closeWidget);
+    if (backdrop) backdrop.addEventListener("click", closeWidget);
     if (sendBtn) sendBtn.addEventListener("click", send);
     textarea.addEventListener("keydown", function (e) {
       if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(); }
     });
+  })();
+
+  /* ---------- Blog: filtros + paginação ---------- */
+  (function () {
+    var grid = document.getElementById("blog-grid");
+    if (!grid) return;
+    var posts = Array.prototype.slice.call(grid.querySelectorAll(".blog-post"));
+    var pagination = document.getElementById("blog-pagination");
+    var perPage = 10 + Math.floor(Math.random() * 3);
+    var currentCat = "todas";
+    var currentPage = 1;
+
+    function filtered() {
+      if (currentCat === "todas") return posts;
+      return posts.filter(function (p) { return p.dataset.category === currentCat; });
+    }
+
+    var layouts3 = [[5,4,3],[4,5,3],[3,5,4],[6,3,3],[3,6,3],[4,4,4],[3,4,5],[5,3,4],[4,3,5],[3,3,6]];
+    var layouts2 = [[7,5],[5,7],[6,6],[8,4],[4,8],[9,3],[3,9]];
+    var layouts4 = [[3,3,3,3]];
+    var heights = {3:"h-40",4:"h-48",5:"h-52",6:"h-56",7:"h-64",8:"h-72",9:"h-80",12:"h-80"};
+
+    function pick(layouts) {
+      return layouts[Math.floor(Math.random() * layouts.length)];
+    }
+
+    function buildSpans(n) {
+      var rowSizes = [];
+      var rem = n;
+      while (rem > 0) {
+        var candidates = [4, 3, 2].filter(function (t) {
+          return t <= rem && (rem - t !== 1);
+        });
+        if (!candidates.length) candidates = [rem];
+        var take = candidates[Math.floor(Math.random() * candidates.length)];
+        rowSizes.push(take);
+        rem -= take;
+      }
+      var spans = [];
+      rowSizes.forEach(function (sz) {
+        if (sz === 4) spans = spans.concat(pick(layouts4));
+        else if (sz === 3) spans = spans.concat(pick(layouts3));
+        else if (sz === 2) spans = spans.concat(pick(layouts2));
+        else spans = spans.concat([12]);
+      });
+      return spans;
+    }
+
+    function render() {
+      var list = filtered();
+      var pages = Math.max(1, Math.ceil(list.length / perPage));
+      if (currentPage > pages) currentPage = pages;
+      if (currentPage < 1) currentPage = 1;
+      posts.forEach(function (p) { p.style.display = "none"; });
+      var start = (currentPage - 1) * perPage;
+      var slice = list.slice(start, start + perPage);
+      var spans = buildSpans(slice.length);
+      slice.forEach(function (p, i) {
+        p.style.display = "";
+        p.classList.remove("md:col-span-3","md:col-span-4","md:col-span-5","md:col-span-6","md:col-span-7","md:col-span-8","md:col-span-9","md:col-span-12");
+        p.classList.add("md:col-span-" + spans[i]);
+        var img = p.querySelector(".blog-img");
+        if (img) {
+          img.className = "blog-img overflow-hidden " + heights[spans[i]];
+        }
+      });
+
+      if (!pagination) return;
+      pagination.innerHTML = "";
+      function btn(label, action, disabled, active) {
+        var b = document.createElement("button");
+        b.type = "button";
+        b.className = "w-10 h-10 rounded-full text-[0.85rem] font-semibold transition-all border-none cursor-pointer " +
+          (active ? "bg-ink text-white" : "bg-white border border-line text-ink-soft hover:text-brand") +
+          (disabled ? " opacity-40 cursor-not-allowed" : "");
+        b.textContent = label;
+        b.disabled = !!disabled;
+        b.addEventListener("click", action);
+        pagination.appendChild(b);
+      }
+      btn("‹", function () { currentPage--; render(); }, currentPage === 1);
+      for (var i = 1; i <= pages; i++) {
+        (function (pg) {
+          btn(String(pg), function () { currentPage = pg; render(); }, false, pg === currentPage);
+        })(i);
+      }
+      btn("›", function () { currentPage++; render(); }, currentPage === pages);
+    }
+
+    document.querySelectorAll("#blog-filters [data-filter]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        document.querySelectorAll("#blog-filters [data-filter]").forEach(function (x) {
+          x.classList.remove("bg-ink", "text-white");
+          x.classList.add("bg-mist", "text-ink-soft");
+        });
+        b.classList.add("bg-ink", "text-white");
+        b.classList.remove("bg-mist", "text-ink-soft");
+        currentCat = b.dataset.filter;
+        currentPage = 1;
+        render();
+      });
+    });
+
+    render();
   })();
 
   /* ---------- Current year ---------- */
