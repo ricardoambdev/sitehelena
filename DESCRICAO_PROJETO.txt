@@ -1,0 +1,272 @@
+================================================================================
+COLÉGIO HELENA — DESCRIÇÃO COMPLETA DO PROJETO E CONTEÚDO
+Pirassununga / SP — site institucional moderno
+Gerado em: 24/08/2026
+Diretório: site_helena/
+================================================================================
+
+1. OBJETIVO
+--------------------------------------------------------------------------------
+Site institucional estático, multi-página, moderno e vendável para o
+Colégio Helena (Pirassununga/SP). Une conteúdo de dois domínios legados
+(helena.stp:81 e colhel.stp:81) em um único site intuitivo, com foco em
+conversão (matrículas / agendamento de visita) e público adolescente/família.
+Design extremamente moderno: editorial, bento grid, glassmorphism, animações
+de rolagem e micro-interações.
+
+2. STACK TÉCNICO
+--------------------------------------------------------------------------------
+- HTML5 semântico, 11 páginas
+- CSS3 puro (sem framework) — design system proprietário em css/style.css
+  (~2000 linhas, tokens, layout, componentes, responsivo)
+- JavaScript vanilla em js/main.js (~300 linhas)
+- Fontes: Google Fonts — Plus Jakarta Sans (display 600/700/800) + Inter
+  (body 400/500/600/700/800)
+- Ícones: SVG inline (sem dependência)
+- Mídia: vídeo MP4 hero (Pixabay, 13MB), 39 fotos institucionais + 7 stock
+  Pexels para page-hero, logos
+
+3. ESTRUTURA DE ARQUIVOS
+--------------------------------------------------------------------------------
+site_helena/
+├── index.html                 → Home
+├── sobre.html                 → Sobre / equipe / accordion
+├── estrutura.html             → Estrutura física
+├── ensino.html                → Segmentos + proposta pedagógica
+├── secretaria.html            → Documentos (doc-cards)
+├── regimento.html             → Regimento escolar
+├── blog.html                  → Galeria / eventos com tabs
+├── contato.html               → Hub com 3 cards
+├── fale-conosco.html          → Formulário de contato
+├── trabalhe-conosco.html      → Formulário de currículo
+├── agendar-visita.html        → Formulário de visita
+├── css/style.css              → Design system completo
+├── js/main.js                 → Interações
+├── assets/img/                → logo.png, hero-image.png, college-front.jpg,
+│   │                            educacao_infantil.png, fundamental_1/2.png,
+│   │                            ensino_medio.png, estrutura.jpg, student-*
+│   │                            team-*.jpg (docentes/apoio), google-reviews-logo.png
+│   └── stock/                 → sobre.jpg, ensino.jpg, estrutura.jpg,
+│                                secretaria.jpg, regimento.jpg, blog.jpg, contato.jpg
+└── assets/video/hero.mp4      → Vídeo fullpage do hero (autoplay muted loop)
+
+4. DESIGN SYSTEM (css/style.css)
+--------------------------------------------------------------------------------
+Tokens:
+  --brand #f4621f (laranja), --blue #7aa0bb, --red #a9422f
+  --ink #0a0f14 (quase preto), --ink-soft #6b7c8a, --paper #fcfcf9 (off-white)
+  --mist #f1efe9, --line #e9e6de, --grad laranja→vermelho, --grad-ink
+  Sombras: sm/md/lg/glow, radius 22/32/40/999px, container 1240px
+  Nav 72px + topbar 32px, eases: ease-out / spring / smooth
+  Tipografia display: Plus Jakarta Sans 800, body: Inter
+
+Componentes globais:
+  - topbar fixa (32px, ink, links Whatsapp/email + "Área do Aluno" link simples)
+  - nav fixa (72px, transparente sobre hero → branca com blur 20px ao rolar)
+    logo 100px branco sobre hero → 56px colorido ao rolar, transição 0.4s
+    dropdown híbrido hover+click, 26px radius, bridge 20px, seta diamante
+  - hero 100svh com vídeo, overlay gradient + orbs animados (float 8s),
+    eyebrow com dot pulsante, h1 clamp 2.4-4.2rem, CTAs brand/ghost, scroll indicator
+  - scroll-progress 3px grad no topo
+  - eyebrow com barra animada, section-title clamp 1.8-2.8rem, lead
+  - botões: brand (grad+glow), light, ghost, outline, ripple no clique
+  - reveal: .reveal/.reveal-left/.reveal-right/.reveal-scale com data-delay 1-6
+  - marquee ticker infinito, footer com watermark HELENA gigante
+  - whatsapp-float verde 56px com bounce
+  - scrollbar custom laranja, ::selection laranja
+
+5. NAVEGAÇÃO
+--------------------------------------------------------------------------------
+Topbar:
+  (19) 98950-2031 (WhatsApp) | contato@colegiohelena.com.br | Área do Aluno →
+  https://colegiohelena.com.br/hln/painel
+
+Nav:
+  Início → index.html
+  O Colégio (dropdown):
+    Sobre → sobre.html
+    A Estrutura → estrutura.html
+    Ensino → ensino.html
+    Proposta Pedagógica → ensino.html#proposta
+  Secretaria (dropdown):
+    Documentos → secretaria.html
+    Regimento → regimento.html
+  Blog → blog.html
+  Contato (dropdown):
+    Fale Conosco → fale-conosco.html
+    Trabalhe Conosco → trabalhe-conosco.html
+    Agendar Visita → agendar-visita.html
+  CTA desktop: "Agende uma visita" → agendar-visita.html
+  Burger + overlay no mobile (340px drawer)
+
+Dropdown: click-toggle com fechamento em clique fora / ESC, 2º clique no desktop
+navega para o href pai. Hover também abre (desktop). Mobile accordion.
+
+6. CONTEÚDO POR PÁGINA
+--------------------------------------------------------------------------------
+6.1 index.html (Home)
+  Hero fullpage vídeo + overlay + eyebrow "Matrículas abertas · 2025"
+    h1 "O colégio que mais cresce em Pirassununga e região."
+    CTAs: Conheça e surpreenda-se → sobre.html / Agende uma visita
+  Trust-strip bento flutuante (margin -84px, 3 cards 28px radius):
+    [ink featured] Nota 5.0 / Google Reviews (data-count 5)
+    Aprovado / Pelos estudantes, pais e comunidade
+    4 segmentos / Da Ed. Infantil ao Ensino Médio
+  Segmentos — bento 12 cols (7+5 / 5+7):
+    01 Ed. Infantil — base cognitiva/emocional/social
+    02 Fundamental I (1º-5º) — leitura/escrita/matemática/valores
+    03 Fundamental II (6º-9º) — pensamento crítico
+    04 Ensino Médio — preparo superior/mercado, formação integral
+    Cada card: imagem 236-268px, pill 01-04, ghost number 01-04
+  Sobre teaser — split 1.08fr/0.92fr:
+    Imagem fachada + card flutuante "Excelência acadêmica / que transforma vidas"
+    Texto: "Trilhando saberes, formando futuros", 3 pills com check
+  Estrutura teaser — split reverse:
+    Imagem estrutura + card "Em constante evolução"
+    Texto: "Um espaço que também educa", 4 pills (anfiteatro, quadra beach tennis,
+    horta robótica, câmeras 24h)
+  Galeria — bento 12 cols (7/5 / 5/7):
+    Fev/2025, Mai/2025, Arraiá 2025 (chip Evento), Ago/2025 — 4 gal-cards
+  CTA + Form — cta-band ink 36px radius com watermark HELENA + texto
+    "Agende uma visita" + botão branco, abaixo form-card 32px com 6 campos
+    (nome, email, parentesco, celular, ano letivo, como conheceu) + submit
+  Marquee ticker + footer
+
+6.2 sobre.html
+  Page-hero com stock/sobre.jpg + breadcrumb
+  "Trilhando Saberes" + missão
+  Diretores (2 cards), Coordenadores (4 cards)
+  Accordion (concorrente, todos fechados, 100% largura, ícone thin-line):
+    Quadro Administrativo, Corpo Docente, Corpo de Apoio — listas de nomes
+    Coordenadores: 4 pessoas (inclui Lilian, Coord. Pedagógica)
+  CTA "Trabalhe conosco"
+
+6.3 estrutura.html
+  Page-hero stock/estrutura.jpg
+  Stats bento: "Excelência acadêmica comprovada" / 2 novas quadras / 1 horta / 1 mini campo
+  Features em bento, instalações listadas, galeria de fotos
+  CTA "Agendar visita"
+
+6.4 ensino.html
+  Page-hero stock/ensino.jpg
+  Proposta pedagógica (âncora #proposta)
+  4 segmentos detalhados (textos específicos por faixa)
+  Stats: Excelência acadêmica na educação / 4 segmentos / Aprovação de pais e alunos
+  CTA
+
+6.5 secretaria.html
+  Page-hero stock/secretaria.jpg
+  Doc-cards (fichas com ícone + título + ação "Solicitar" → fale-conosco.html)
+  Ex: atestado, declaração, histórico etc.
+
+6.6 regimento.html
+  Page-hero stock/regimento.jpg
+  6 doc-cards similares, texto institucional, botão "Solicitar versão completa" → WhatsApp
+
+6.7 blog.html
+  Page-hero stock/blog.jpg
+  Tabs: Todas / Galerias / Eventos (tab-btn / tab-panel)
+  Gal-cards por mês/evento, com imagem + data + link "Ver fotos"
+
+6.8 contato.html (hub)
+  Page-hero stock/contato.jpg
+  3 contact-cards (WhatsApp, email, endereço)
+  3 seg-cards grandes linkando para as subpáginas:
+    01 Fale Conosco → fale-conosco.html
+    02 Trabalhe Conosco → trabalhe-conosco.html
+    03 Agendar Visita → agendar-visita.html
+
+6.9 fale-conosco.html
+  Page-hero stock/contato.jpg (ou secretaria)
+  3 contact-cards + split intro + form-card (nome, email, assunto, mensagem)
+
+6.10 trabalhe-conosco.html
+  Page-hero stock/sobre.jpg / ensino.jpg
+  Split intro "Faça parte do nosso time" + 3 bullets + imagem
+  Form: nome, email, celular, área de interesse (select: Ed. Infantil, Fund I/II,
+  Médio, Administrativo, Marketing, Outros), mensagem
+
+6.11 agendar-visita.html
+  Page-hero stock/blog.jpg / estrutura.jpg
+  Split intro "Venha viver o Colégio Helena" + 3 bullets + imagem
+  Form: nome, email, parentesco, celular, ano letivo (2025/2026), como conheceu
+
+7. FOOTER (todas as páginas)
+--------------------------------------------------------------------------------
+4 colunas:
+  Brand: logo branco 44px + texto + social (Facebook, Instagram, YouTube, TikTok)
+  Descubra: Início, Sobre, Estrutura, Ensino, Blog, Regimento
+  Contato: Fale conosco, Trabalhe conosco, Agendar visita, Área do aluno
+  Endereço: Rua Alan Kardec 410, Vila Industrial, Pirassununga/SP + Whatsapp + email
+Bottom: © ano atual + "Desenvolvido com ♥ por @agenciasentapua"
+Watermark HELENA gigante ao fundo (18rem, opacity .02)
+
+8. INTERAÇÕES (js/main.js)
+--------------------------------------------------------------------------------
+- scroll-progress (scaleX conforme rolagem)
+- nav--scrolled toggle em scrollY>100 (muda de transparente para branca blur)
+- mobile burger toggle + overlay + body overflow hidden
+- dropdowns híbridos (hover+click, bridge, ESC, clique fora, 2º clique navega)
+- reveal on scroll (IntersectionObserver, threshold 0.1, 4 direções + stagger data-delay)
+- contadores animados data-count (0→ alvo com easing)
+- ripple em .btn (span absolute scale 0→4)
+- tabs com hash #fale #trabalhe #agendar
+- forms fake submit com validação required + mensagem .form-msg--ok/--err
+- accordion concorrente (grid-template-rows 0fr→1fr, maxHeight)
+- tilt 3D em cards (mousemove rotateX/Y)
+- parallax data-parallax, hero fade no scroll
+- ano atual data-year
+
+9. RESPONSIVO
+--------------------------------------------------------------------------------
+Breakpoints: 1024px (tablet) e 640px (mobile)
+- Topbar esconde no mobile? Mantém, mas burger aparece
+- Nav vira drawer 340px (86vw) com overlay blur, dropdowns viram accordion
+  (max-height 0→440px, radius 22px)
+- Trust-strip: 3 cols desktop → 1fr 1fr (1º full) tablet → 1 col mobile
+- Seg-grid bento 12 cols desktop → 2 cols tablet → 1 col mobile
+- Gal-grid idem
+- Split: 2 cols → 1 col (imagem topo)
+- CTA-band: grid 1.25fr auto → 1 col centrado
+- Form-grid: 2 cols → 1 col
+- Footer: 4 cols → 2 cols tablet → 1 col mobile
+
+10. CONTEÚDO COMERCIAL / TEXTOS-CHAVE
+--------------------------------------------------------------------------------
+- Claims substituídos: "+15 anos" → "Excelência acadêmica" (index, ensino, estrutura)
+- Google Reviews no hero removido (trust-strip mantém 5.0)
+- Frases: "O colégio que mais cresce em Pirassununga e região",
+  "Trilhando saberes, formando futuros", "Um espaço que também educa",
+  "Excelência acadêmica que transforma vidas", "Em constante evolução"
+- CTAs recorrentes: "Agende uma visita", "Conheça nossa história/estrutura"
+
+11. DADOS DE CONTATO OFICIAIS
+--------------------------------------------------------------------------------
+Endereço: Rua Alan Kardec, 410 — Vila Industrial, Pirassununga / SP
+WhatsApp: (19) 98950-2031 → https://api.whatsapp.com/send/?phone=5519989502031
+Email: contato@colegiohelena.com.br
+Painel: https://colegiohelena.com.br/hln/painel (Área do Aluno)
+Redes: facebook.com/colegio.helena.pirassununga, instagram.com/colegio.helena,
+       youtube.com/@colegiohelena, tiktok.com/colegio.helena
+Crédito: @agenciasentapua
+
+12. HISTÓRICO DE EVOLUÇÃO RECENTE
+--------------------------------------------------------------------------------
+- Hero fullpage vídeo atrás + nav sobreposto (topbar fixa 32px + nav 72px)
+- Topbar reduzida 40→32px, botão "Área do Aluno" virou link simples sem fundo
+- Logo 56→100px branco sobre hero, diminui ao rolar
+- Contato fatiado em 3 páginas separadas, contato.html virado hub
+- Trust-strip transformado em bento flutuante sobre hero
+- Segmentos/galeria em bento 12 colunas assimétrico com ghost numbers
+- Split com pills e card branco flutuante, CTA ink com watermark
+- Marquee ticker adicionado, footer com watermark HELENA
+
+13. COMO RODAR / VERIFICAR
+--------------------------------------------------------------------------------
+Abrir qualquer .html direto no browser ou servir:
+  python -m http.server 8000 --directory site_helena
+Todas as páginas retornam 200, HTML validado (balanceado), sem dependências.
+
+================================================================================
+FIM
+================================================================================

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fundamental I – 3º ano — Lista de Materiais | Colégio Helena</title>
+  <meta name="description" content="Lista de materiais para Fundamental I – 3º ano do Colégio Helena." />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#FF6600',
+            'brand-hover': '#d14e1a',
+            'brand-soft': 'rgba(255,102,0,0.08)',
+            'brand-glow': 'rgba(255,102,0,0.3)',
+            blue: '#5b8fa8',
+            'blue-soft': 'rgba(91,143,168,0.08)',
+            red: '#c0442e',
+            'red-soft': 'rgba(192,68,46,0.06)',
+            ink: '#111827',
+            'ink-2': '#1f2937',
+            'ink-soft': '#6b7280',
+            'ink-faint': '#9ca3af',
+            paper: '#fafaf9',
+            mist: '#f5f5f4',
+            line: '#e5e7eb',
+          },
+          fontFamily: {
+            display: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            body: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          borderRadius: {
+            '2xl': '16px',
+            '3xl': '24px',
+            '4xl': '32px',
+          },
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="font-body text-ink bg-paper antialiased overflow-x-hidden" data-page="secretaria">
+
+  <div class="scroll-progress"></div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header id="main-nav" class="fixed top-0 left-0 right-0 h-[72px] z-50 transition-all duration-400">
+    <div class="max-w-[1200px] w-[92%] mx-auto flex items-center justify-between h-full">
+      <a href="index.html" aria-label="Colégio Helena">
+        <img src="assets/img/logo.png" alt="Colégio Helena" class="h-[100px] w-auto transition-all duration-400" id="nav-logo" />
+      </a>
+
+      <nav id="nav-menu" class="hidden lg:flex items-center gap-0" aria-label="Menu principal">
+        <a class="nav__link px-4 py-2 text-[0.88rem] font-medium text-white/80 hover:text-white rounded-full transition-colors" href="index.html">Início</a>
+        <div class="relative nav__item has-dropdown">
+          <a class="nav__link px-4 py-2 text-[0.88rem] font-medium text-white/80 hover:text-white rounded-full transition-colors flex items-center gap-1" href="sobre.html">O Colégio <ion-icon name="chevron-down" class="chevron-icon text-[14px]"></ion-icon></a>
+          <div class="nav__dropdown absolute top-[calc(100%+12px)] left-1/2 -translate-x-1/2 translate-y-2 min-w-[200px] bg-white rounded-2xl shadow-lg border border-line p-2 opacity-0 invisible pointer-events-none transition-all duration-200">
+            <div class="absolute -top-[6px] left-1/2 -translate-x-1/2 rotate-45 w-3 h-3 bg-white border border-line border-b-0 border-r-0"></div>
+            <a href="sobre.html" class="flex items-center gap-1 px-4 py-2.5 text-[0.85rem] font-medium text-ink-soft rounded-xl hover:bg-brand-soft hover:text-brand transition-all">Sobre</a>
+            <a href="estrutura.html" class="flex items-center gap-1 px-4 py-2.5 text-[0.85rem] font-medium text-ink-soft rounded-xl hover:bg-brand-soft hover:text-brand transition-all">A Estrutura</a>
+            <a href="ensino.html" class="flex items-center gap-1 px-4 py-2.5 text-[0.85rem] font-medium text-ink-soft rounded-xl hover:bg-brand-soft hover:text-brand transition-all">Ensino</a>
+            <a href="ensino.html#proposta" class="flex items-center gap-1 px-4 py-2.5 text-[0.85rem] font-medium text-ink-soft rounded-xl hover:bg-brand-soft hover:text-brand transition-all">Proposta Pedagógica</a>
+          </div>
+        </div>
+        <div class="relative nav__item has-dropdown">
+          <a class="nav__link px-4 py-2 text-[0.88rem] font-medium text-white/80 hover:text-white rounded-full transition-colors flex items-center gap-1" href="secretaria.html">Secretaria <ion-icon name="chevron-down" class="chevron-icon text-[14px]"></ion-icon></a>
+          <div class="nav__dropdown absolute top-[calc(100%+12px)] left-1/2 -translate-x-1/2 translate-y-2 min-w-[200px] bg-white rounded-2xl shadow-lg border border-line p-2 opacity-0 invisible pointer-events-none transition-all duration-200">
+            <div class="absolute -top-[6px] left-1/2 -translate-x-1/2 rotate-45 w-3 h-3 bg-white border border-line border-b-0 border-r-0"></div>
+            <a href="secretaria.html" class="flex items-center gap-1 px-4 py-2.5 text-[0.85rem] font-medium text-ink-soft rounded-xl hover:bg-brand-soft hover:text-brand transition-all">Documentos</a>
+            <a href="regimento.html" class="flex items-center gap-1 px-4 py-2.5 text-[0.85rem] font-medium text-ink-soft rounded-xl hover:bg-brand-soft hover:text-brand transition-all">Regimento</a>
+          </div>
+        </div>
+        <a class="nav__link px-4 py-2 text-[0.88rem] font-medium text-white/80 hover:text-white rounded-full transition-colors" href="blog.html">Blog</a>
+        <div class="relative nav__item has-dropdown">
+          <a class="nav__link px-4 py-2 text-[0.88rem] font-medium text-white/80 hover:text-white rounded-full transition-colors flex items-center gap-1" href="contato.html">Contato <ion-icon name="chevron-down" class="chevron-icon text-[14px]"></ion-icon></a>
+          <div class="nav__dropdown absolute top-[calc(100%+12px)] left-1/2 -translate-x-1/2 translate-y-2 min-w-[200px] bg-white rounded-2xl shadow-lg border border-line p-2 opacity-0 invisible pointer-events-none transition-all duration-200">
+            <div class="absolute -top-[6px] left-1/2 -translate-x-1/2 rotate-45 w-3 h-3 bg-white border border-line border-b-0 border-r-0"></div>
+            <a href="fale-conosco.html" class="flex items-center gap-1 px-4 py-2.5 text-[0.85rem] font-medium text-ink-soft rounded-xl hover:bg-brand-soft hover:text-brand transition-all">Fale Conosco</a>
+            <a href="trabalhe-conosco.html" class="flex items-center gap-1 px-4 py-2.5 text-[0.85rem] font-medium text-ink-soft rounded-xl hover:bg-brand-soft hover:text-brand transition-all">Trabalhe Conosco</a>
+            <a href="agendar-visita.html" class="flex items-center gap-1 px-4 py-2.5 text-[0.85rem] font-medium text-ink-soft rounded-xl hover:bg-brand-soft hover:text-brand transition-all">Agendar Visita</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="hidden lg:flex items-center gap-3">
+        <a href="agendar-visita.html" id="nav-cta" class="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-white text-[0.85rem] font-semibold transition-all hover:bg-white/20 hover:-translate-y-0.5">Agende uma visita</a>
+      </div>
+
+      <!-- Mobile CTA -->
+      <div id="nav-cta-mobile" class="flex flex-col gap-2 mt-4 pt-4 border-t border-line lg:hidden">
+        <a href="agendar-visita.html" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-brand to-red text-white text-[0.9rem] font-semibold shadow-md hover:shadow-lg hover:-translate-y-0.5 transition-all">Agende uma visita</a>
+        <a href="https://colegiohelena.com.br/hln/painel" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border-2 border-line text-ink text-[0.9rem] font-semibold hover:border-brand hover:text-brand transition-all">Área do Aluno</a>
+      </div>
+
+      <button id="nav-burger" class="lg:hidden flex flex-col gap-[5px] p-2 z-[1001]" aria-label="Abrir menu" aria-expanded="false">
+        <span class="w-[22px] h-[2px] bg-ink rounded-full"></span>
+        <span class="w-[22px] h-[2px] bg-ink rounded-full"></span>
+        <span class="w-[22px] h-[2px] bg-ink rounded-full"></span>
+      </button>
+    </div>
+  </header>
+
+  <div id="nav-overlay" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-[999] opacity-0 invisible transition-all duration-300"></div>
+
+  <main>
+    <!-- ============ PAGE HERO ============ -->
+    <section class="relative h-[320px] flex items-end overflow-hidden border-b-[5px] border-brand">
+      <img class="absolute inset-0 w-full h-full object-cover" src="assets/img/stock/secretaria.jpg" alt="" />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-black/90"></div>
+      <div class="max-w-[1200px] w-[92%] mx-auto relative z-10 pb-8">
+        <nav class="flex items-center gap-1.5 mb-3" aria-label="Trilha">
+          <a href="index.html" class="text-[0.78rem] font-medium text-white/60 hover:text-white">Início</a>
+          <ion-icon name="chevron-forward" class="text-xs text-white/40"></ion-icon>
+          <a href="secretaria.html" class="text-[0.78rem] font-medium text-white/60 hover:text-white">Secretaria</a>
+          <ion-icon name="chevron-forward" class="text-xs text-white/40"></ion-icon>
+          <a href="listas-de-materiais.html" class="text-[0.78rem] font-medium text-white/60 hover:text-white">Listas de Materiais</a>
+          <ion-icon name="chevron-forward" class="text-xs text-white/40"></ion-icon>
+          <span class="text-[0.78rem] font-medium text-white/60">3º ano</span>
+        </nav>
+        <h1 class="font-display font-extrabold text-[clamp(1.7rem,3.5vw,2.6rem)] text-white leading-tight mb-2">Fundamental I – 3º ano</h1>
+        <p class="text-white/70 text-[1rem] leading-relaxed max-w-[540px]">Lista de materiais para o ano letivo.</p>
+      </div>
+    </section>
+
+    <!-- ============ LISTA ============ -->
+    <section class="py-[clamp(4rem,8vw,7rem)]">
+      <div class="max-w-[760px] w-[92%] mx-auto">
+        <div class="bg-white rounded-3xl border border-line p-8 reveal">
+          <span class="inline-flex items-center gap-2 text-[0.7rem] font-bold tracking-[0.18em] uppercase text-brand mb-3 before:content-[''] before:w-5 before:h-0.5 before:rounded-full before:bg-gradient-to-r before:from-brand before:to-red">Lista de Materiais</span>
+          <h2 class="font-display font-extrabold text-[clamp(1.4rem,3vw,2rem)] leading-[1.15] tracking-tight text-ink mb-5">Fundamental I – 3º ano</h2>
+          <ul class="flex flex-col gap-2.5">
+<li class="flex items-center gap-2 text-[0.9rem] text-ink-soft"><ion-icon name="checkmark" class="text-[12px] text-white bg-brand rounded-full p-[3px] w-5 h-5 text-center flex-shrink-0"></ion-icon> Caderno brochura (2)</li>
+<li class="flex items-center gap-2 text-[0.9rem] text-ink-soft"><ion-icon name="checkmark" class="text-[12px] text-white bg-brand rounded-full p-[3px] w-5 h-5 text-center flex-shrink-0"></ion-icon> Caderno de caligrafia</li>
+<li class="flex items-center gap-2 text-[0.9rem] text-ink-soft"><ion-icon name="checkmark" class="text-[12px] text-white bg-brand rounded-full p-[3px] w-5 h-5 text-center flex-shrink-0"></ion-icon> Lápis preto</li>
+<li class="flex items-center gap-2 text-[0.9rem] text-ink-soft"><ion-icon name="checkmark" class="text-[12px] text-white bg-brand rounded-full p-[3px] w-5 h-5 text-center flex-shrink-0"></ion-icon> Borracha</li>
+<li class="flex items-center gap-2 text-[0.9rem] text-ink-soft"><ion-icon name="checkmark" class="text-[12px] text-white bg-brand rounded-full p-[3px] w-5 h-5 text-center flex-shrink-0"></ion-icon> Lápis de cor (24)</li>
+<li class="flex items-center gap-2 text-[0.9rem] text-ink-soft"><ion-icon name="checkmark" class="text-[12px] text-white bg-brand rounded-full p-[3px] w-5 h-5 text-center flex-shrink-0"></ion-icon> Régua</li>
+<li class="flex items-center gap-2 text-[0.9rem] text-ink-soft"><ion-icon name="checkmark" class="text-[12px] text-white bg-brand rounded-full p-[3px] w-5 h-5 text-center flex-shrink-0"></ion-icon> Tesoura</li>
+<li class="flex items-center gap-2 text-[0.9rem] text-ink-soft"><ion-icon name="checkmark" class="text-[12px] text-white bg-brand rounded-full p-[3px] w-5 h-5 text-center flex-shrink-0"></ion-icon> Cola branca</li>
+<li class="flex items-center gap-2 text-[0.9rem] text-ink-soft"><ion-icon name="checkmark" class="text-[12px] text-white bg-brand rounded-full p-[3px] w-5 h-5 text-center flex-shrink-0"></ion-icon> Dicionário</li>
+<li class="flex items-center gap-2 text-[0.9rem] text-ink-soft"><ion-icon name="checkmark" class="text-[12px] text-white bg-brand rounded-full p-[3px] w-5 h-5 text-center flex-shrink-0"></ion-icon> Estojo</li>
+          </ul>
+          <p class="text-[0.8rem] text-ink-faint mt-6">Os itens devem ser identificados com o nome do aluno. Materiais podem sofrer ajustes conforme orientação da escola.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================== MARQUEE ===================== -->
+  <div class="overflow-hidden py-4 border-t border-b border-line">
+    <div class="marquee__track">
+      <span class="font-display font-extrabold text-base text-ink-faint tracking-wide uppercase flex-shrink-0">Trilhando saberes <span class="inline-block w-1.5 h-1.5 bg-brand rounded-full mx-4 align-middle"></span></span>
+      <span class="font-display font-extrabold text-base text-ink-faint tracking-wide uppercase flex-shrink-0">Formando futuros <span class="inline-block w-1.5 h-1.5 bg-brand rounded-full mx-4 align-middle"></span></span>
+      <span class="font-display font-extrabold text-base text-ink-faint tracking-wide uppercase flex-shrink-0">Pirassununga <span class="inline-block w-1.5 h-1.5 bg-brand rounded-full mx-4 align-middle"></span></span>
+      <span class="font-display font-extrabold text-base text-ink-faint tracking-wide uppercase flex-shrink-0">Excelência acadêmica <span class="inline-block w-1.5 h-1.5 bg-brand rounded-full mx-4 align-middle"></span></span>
+      <span class="font-display font-extrabold text-base text-ink-faint tracking-wide uppercase flex-shrink-0">Desde 2009 <span class="inline-block w-1.5 h-1.5 bg-brand rounded-full mx-4 align-middle"></span></span>
+      <span class="font-display font-extrabold text-base text-ink-faint tracking-wide uppercase flex-shrink-0">Trilhando saberes <span class="inline-block w-1.5 h-1.5 bg-brand rounded-full mx-4 align-middle"></span></span>
+      <span class="font-display font-extrabold text-base text-ink-faint tracking-wide uppercase flex-shrink-0">Formando futuros <span class="inline-block w-1.5 h-1.5 bg-brand rounded-full mx-4 align-middle"></span></span>
+      <span class="font-display font-extrabold text-base text-ink-faint tracking-wide uppercase flex-shrink-0">Pirassununga <span class="inline-block w-1.5 h-1.5 bg-brand rounded-full mx-4 align-middle"></span></span>
+      <span class="font-display font-extrabold text-base text-ink-faint tracking-wide uppercase flex-shrink-0">Excelência acadêmica <span class="inline-block w-1.5 h-1.5 bg-brand rounded-full mx-4 align-middle"></span></span>
+      <span class="font-display font-extrabold text-base text-ink-faint tracking-wide uppercase flex-shrink-0">Desde 2009 <span class="inline-block w-1.5 h-1.5 bg-brand rounded-full mx-4 align-middle"></span></span>
+    </div>
+  </div>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="bg-ink text-[#9ca3af] pt-[clamp(3rem,6vw,5rem)] pb-0 relative overflow-hidden">
+    <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-display font-extrabold text-[clamp(8rem,20vw,18rem)] text-white/[0.02] whitespace-nowrap pointer-events-none select-none">HELENA</div>
+    <div class="max-w-[1200px] w-[92%] mx-auto relative">
+      <div class="grid grid-cols-1 md:grid-cols-[1.5fr_1fr_1fr_1.2fr] gap-10">
+        <div>
+          <img src="assets/img/logo.png" alt="Colégio Helena" class="h-11 w-auto mb-4 brightness-0 invert" />
+          <p class="text-[0.85rem] leading-relaxed mb-5">Educação de qualidade que prepara os alunos de forma abrangente para os desafios do mundo atual.</p>
+          <div class="flex gap-3">
+            <a href="https://facebook.com/colegio.helena.pirassununga" aria-label="Facebook" class="w-9 h-9 rounded-full bg-white/6 flex items-center justify-center hover:bg-brand hover:text-white transition-all"><ion-icon name="logo-facebook" class="text-base"></ion-icon></a>
+            <a href="https://instagram.com/colegio.helena" aria-label="Instagram" class="w-9 h-9 rounded-full bg-white/6 flex items-center justify-center hover:bg-brand hover:text-white transition-all"><ion-icon name="logo-instagram" class="text-base"></ion-icon></a>
+            <a href="https://youtube.com/@colegiohelena" aria-label="YouTube" class="w-9 h-9 rounded-full bg-white/6 flex items-center justify-center hover:bg-brand hover:text-white transition-all"><ion-icon name="logo-youtube" class="text-base"></ion-icon></a>
+            <a href="https://tiktok.com/colegio.helena" aria-label="TikTok" class="w-9 h-9 rounded-full bg-white/6 flex items-center justify-center hover:bg-brand hover:text-white transition-all"><ion-icon name="logo-tiktok" class="text-base"></ion-icon></a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-display font-bold text-[0.85rem] text-gray-200 mb-4">Descubra</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-[0.85rem] hover:text-brand transition-colors">Início</a></li>
+            <li><a href="sobre.html" class="text-[0.85rem] hover:text-brand transition-colors">Sobre o colégio</a></li>
+            <li><a href="estrutura.html" class="text-[0.85rem] hover:text-brand transition-colors">Nossa estrutura</a></li>
+            <li><a href="ensino.html" class="text-[0.85rem] hover:text-brand transition-colors">Ensino</a></li>
+            <li><a href="blog.html" class="text-[0.85rem] hover:text-brand transition-colors">Blog</a></li>
+            <li><a href="regimento.html" class="text-[0.85rem] hover:text-brand transition-colors">Regimento escolar</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-bold text-[0.85rem] text-gray-200 mb-4">Contato</h4>
+          <ul class="space-y-2">
+            <li><a href="fale-conosco.html" class="text-[0.85rem] hover:text-brand transition-colors">Fale conosco</a></li>
+            <li><a href="trabalhe-conosco.html" class="text-[0.85rem] hover:text-brand transition-colors">Trabalhe conosco</a></li>
+            <li><a href="agendar-visita.html" class="text-[0.85rem] hover:text-brand transition-colors">Agendar visita</a></li>
+            <li><a href="https://colegiohelena.com.br/hln/painel" class="text-[0.85rem] hover:text-brand transition-colors">Área do aluno</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-display font-bold text-[0.85rem] text-gray-200 mb-4">Endereço</h4>
+          <ul class="space-y-2.5">
+            <li class="flex gap-2.5 text-[0.85rem]"><ion-icon name="location-outline" class="text-base text-brand mt-0.5 flex-shrink-0"></ion-icon><span>Rua Alan Kardec, 410<br />Vila Industrial, Pirassununga / SP</span></li>
+            <li class="flex gap-2.5 text-[0.85rem]"><ion-icon name="logo-whatsapp" class="text-base text-brand mt-0.5 flex-shrink-0"></ion-icon><a href="https://api.whatsapp.com/send/?phone=5519989502031" class="hover:text-brand transition-colors">(19) 98950-2031</a></li>
+            <li class="flex gap-2.5 text-[0.85rem]"><ion-icon name="mail-outline" class="text-base text-brand mt-0.5 flex-shrink-0"></ion-icon><a href="mailto:contato@colegiohelena.com.br" class="hover:text-brand transition-colors">contato@colegiohelena.com.br</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="flex flex-col sm:flex-row items-center justify-between py-6 mt-10 border-t border-white/[0.08] text-[0.78rem] relative">
+        <span>© <span data-year>2025</span> Colégio Helena. Todos os direitos reservados.</span>
+        <span>Desenvolvido com <span class="text-brand">♥</span> por <a href="https://instagram.com/agenciasentapua" class="hover:text-brand transition-colors">@agenciasentapua</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== QUICK ACCESS DOCK ===================== -->
+  <div class="quick-dock fixed bottom-6 right-6 z-[900] transition-all duration-[350ms] ease-[cubic-bezier(0.16,1,0.3,1)]" role="dialog" aria-label="Acesso rápido" aria-hidden="true" id="quick-dock">
+    <button class="quick-dock__trigger flex items-center gap-2 px-5 py-3.5 bg-ink text-white rounded-full shadow-lg text-[0.85rem] font-semibold transition-all hover:-translate-y-0.5 hover:shadow-xl" aria-label="Abrir acesso rápido" aria-expanded="false">
+      <ion-icon name="grid-outline" class="text-lg"></ion-icon>
+      <span class="quick-dock__label">Acesso Rápido</span>
+    </button>
+    <div class="quick-dock__panel absolute bottom-[calc(100%+12px)] right-0 w-[320px] bg-white rounded-3xl shadow-2xl border border-line opacity-0 invisible translate-y-3 scale-95 transition-all duration-300 overflow-hidden" id="quick-dock-panel" role="menu">
+      <div class="flex items-center justify-between px-5 py-4 border-b border-line">
+        <h3 class="font-display font-bold text-[0.9rem] text-ink">Central de Acesso</h3>
+        <button class="quick-dock__close w-7 h-7 rounded-full bg-mist flex items-center justify-center hover:bg-line transition-colors" aria-label="Fechar"><ion-icon name="close-outline" class="text-sm text-ink-soft"></ion-icon></button>
+      </div>
+      <nav class="p-2" role="navigation">
+        <a class="quick-dock__item flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-brand-soft transition-all" href="sobre.html" role="menuitem">
+          <span class="quick-dock__item-icon w-9 h-9 rounded-xl bg-mist flex items-center justify-center flex-shrink-0 transition-colors hover:bg-brand"><ion-icon name="school-outline" class="text-base text-ink-soft transition-colors hover:text-white"></ion-icon></span>
+          <span class="quick-dock__item-label text-[0.85rem] font-semibold text-ink">Sobre o Colégio</span>
+        </a>
+        <a class="quick-dock__item flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-brand-soft transition-all" href="ensino.html" role="menuitem">
+          <span class="quick-dock__item-icon w-9 h-9 rounded-xl bg-mist flex items-center justify-center flex-shrink-0 transition-colors hover:bg-brand"><ion-icon name="book-outline" class="text-base text-ink-soft transition-colors hover:text-white"></ion-icon></span>
+          <span class="quick-dock__item-label text-[0.85rem] font-semibold text-ink">Ensino & Segmentos</span>
+        </a>
+        <a class="quick-dock__item flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-brand-soft transition-all" href="estrutura.html" role="menuitem">
+          <span class="quick-dock__item-icon w-9 h-9 rounded-xl bg-mist flex items-center justify-center flex-shrink-0 transition-colors hover:bg-brand"><ion-icon name="business-outline" class="text-base text-ink-soft transition-colors hover:text-white"></ion-icon></span>
+          <span class="quick-dock__item-label text-[0.85rem] font-semibold text-ink">Nossa Estrutura</span>
+        </a>
+        <a class="quick-dock__item flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-brand-soft transition-all" href="agendar-visita.html" role="menuitem">
+          <span class="quick-dock__item-icon w-9 h-9 rounded-xl bg-mist flex items-center justify-center flex-shrink-0 transition-colors hover:bg-brand"><ion-icon name="calendar-outline" class="text-base text-ink-soft transition-colors hover:text-white"></ion-icon></span>
+          <span class="quick-dock__item-label text-[0.85rem] font-semibold text-ink">Agendar Visita</span>
+        </a>
+        <a class="quick-dock__item flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-brand-soft transition-all" href="fale-conosco.html" role="menuitem">
+          <span class="quick-dock__item-icon w-9 h-9 rounded-xl bg-mist flex items-center justify-center flex-shrink-0 transition-colors hover:bg-brand"><ion-icon name="chatbubble-outline" class="text-base text-ink-soft transition-colors hover:text-white"></ion-icon></span>
+          <span class="quick-dock__item-label text-[0.85rem] font-semibold text-ink">Fale Conosco</span>
+        </a>
+        <a class="quick-dock__item flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-brand-soft transition-all" href="https://api.whatsapp.com/send/?phone=5519989502031" role="menuitem" target="_blank" rel="noopener">
+          <span class="quick-dock__item-icon w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 transition-colors" style="background:#25D366"><ion-icon name="logo-whatsapp" class="text-base text-white"></ion-icon></span>
+          <span class="quick-dock__item-label text-[0.85rem] font-semibold text-ink">WhatsApp Direto</span>
+        </a>
+      </nav>
+      <div class="px-5 py-3 border-t border-line text-center">
+        <a href="https://colegiohelena.com.br/hln/painel" class="text-[0.8rem] font-semibold text-brand hover:underline">Área do Aluno →</a>
+      </div>
+    </div>
+    <div class="quick-dock__backdrop fixed inset-0 bg-black/30 backdrop-blur-sm z-[-1] opacity-0 invisible transition-all duration-300"></div>
+  </div>
+
+  <!-- ===================== WHATSAPP FLOAT ===================== -->
+  <a href="https://api.whatsapp.com/send/?phone=5519989502031" class="whatsapp-float fixed bottom-6 left-6 w-[52px] h-[52px] bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-lg shadow-[#25D366]/35 z-[900] transition-all duration-300 hover:scale-110 hover:shadow-xl hover:shadow-[#25D366]/45" aria-label="Fale conosco no WhatsApp">
+    <ion-icon name="logo-whatsapp" class="text-[26px]"></ion-icon>
+  </a>
+
+  <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
