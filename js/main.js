@@ -83,6 +83,7 @@
     document.querySelectorAll(".nav__item.is-open").forEach(function (it) {
       it.classList.remove("is-open");
     });
+    if (typeof onScroll === "function") onScroll();
   }
 
   if (burger && menu) {
@@ -94,11 +95,20 @@
         menu.classList.add("open");
         menu.classList.remove("hidden");
         menu.classList.add("lg:flex");
-        menu.style.cssText = "display:flex;position:fixed;top:0;right:0;width:min(380px,88vw);height:100dvh;background:white;flex-direction:column;align-items:stretch;padding:5rem 1.5rem 2rem;gap:0;z-index:1000;overflow-y:auto;box-shadow:-8px 0 32px rgba(0,0,0,0.1);";
+        menu.style.cssText = "display:flex;position:fixed;top:0;right:0;width:min(380px,88vw);height:100dvh;background:white;flex-direction:column;align-items:stretch;padding:5.5rem 1.5rem 2rem;gap:0;z-index:1000;overflow-y:auto;box-shadow:-8px 0 32px rgba(0,0,0,0.1);";
         burger.classList.add("open");
         burger.setAttribute("aria-expanded", "true");
         if (overlay) overlay.classList.remove("opacity-0", "invisible");
         document.body.style.overflow = "hidden";
+        // drawer branco: forçar links e burger escuros
+        document.querySelectorAll(".nav__link").forEach(function (l) {
+          l.classList.remove("text-white/80", "hover:text-white");
+          l.classList.add("text-ink", "hover:text-brand");
+        });
+        document.querySelectorAll("#nav-burger span").forEach(function (s) {
+          s.classList.remove("bg-white");
+          s.classList.add("bg-ink");
+        });
       }
     });
     if (overlay) overlay.addEventListener("click", closeMenu);

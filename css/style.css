@@ -158,6 +158,9 @@
   .nav__dropdown > div[class*="rotate-45"] {
     display: none;
   }
+  .nav__item.has-dropdown::after {
+    display: none;
+  }
 }
 
 /* ---- Accordion ---- */
@@ -199,4 +202,16 @@ input:focus, select:focus, textarea:focus {
 input.error, select.error, textarea.error {
   border-color: #c0442e !important;
   box-shadow: 0 0 0 3px rgba(192, 68, 46, 0.1) !important;
+}
+
+/* ---- Mobile (max 640px) ---- */
+@media (max-width: 640px) {
+  .hero { min-height: 100svh; }
+  .hero__ctas { flex-direction: column; }
+  .hero__ctas .btn { width: 100%; }
+  .quick-dock__trigger .quick-dock__label { display: none; }
+  .quick-dock__trigger { padding: 0.9rem; }
+  .quick-dock__panel { width: calc(100vw - 3rem); }
+  .nav__cta--mobile .btn { width: 100%; }
+  .whatsapp-float { width: 52px; height: 52px; }
 }
