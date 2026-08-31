@@ -211,6 +211,7 @@ input.error, select.error, textarea.error {
 /* ---- Mobile (max 640px) ---- */
 @media (max-width: 640px) {
   #main-nav .nav__inner { width: 100% !important; padding-left: 1rem !important; padding-right: 1rem !important; }
+  #nav-burger { margin-top: 0.5rem !important; margin-right: 0.75rem !important; }
   .hero { min-height: 100svh; }
   .hero__ctas { flex-direction: column; }
   .hero__ctas .btn { width: 100%; }
