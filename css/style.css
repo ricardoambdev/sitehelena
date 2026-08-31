@@ -147,7 +147,7 @@
     opacity: 1 !important;
     visibility: visible !important;
     pointer-events: auto !important;
-    display: none !important;
+    display: none;
   }
   .nav__item.is-open > .nav__dropdown {
     display: block !important;
