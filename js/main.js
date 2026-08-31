@@ -23,13 +23,12 @@
         nav.style.height = "";
         nav.classList.add("bg-white", "backdrop-blur-xl", "shadow-sm");
       } else {
-        nav.style.height = "110px";
+        nav.style.height = "";
         nav.classList.remove("bg-white", "backdrop-blur-xl", "shadow-sm", "border-b", "border-line");
       }
     }
     if (navLogo) {
       navLogo.style.height = scrolled ? "48px" : "100px";
-      navLogo.style.marginTop = scrolled ? "" : "10px";
       if (scrolled) {
         navLogo.classList.remove("brightness-0", "invert");
       } else {
@@ -98,7 +97,7 @@
         menu.style.cssText = "display:flex;position:fixed;top:0;left:0;width:100%;height:100dvh;background:white;flex-direction:column;align-items:stretch;padding:6.5rem 1.5rem 2rem;gap:0;z-index:1000;overflow-y:auto;";
         burger.classList.add("open");
         burger.setAttribute("aria-expanded", "true");
-        if (overlay) overlay.classList.remove("opacity-0", "invisible");
+        if (overlay) overlay.classList.add("opacity-0", "invisible");
         document.body.style.overflow = "hidden";
         // drawer branco: forçar links e burger escuros
         document.querySelectorAll(".nav__link").forEach(function (l) {

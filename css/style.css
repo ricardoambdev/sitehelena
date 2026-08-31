@@ -143,17 +143,14 @@
     border: none !important;
     border-radius: 12px !important;
     margin: 0.25rem 0 0.5rem !important;
-    max-height: 0;
-    overflow: hidden;
-    padding: 0 !important;
+    padding: 0.5rem !important;
     opacity: 1 !important;
     visibility: visible !important;
     pointer-events: auto !important;
-    transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), padding 0.35s;
+    display: none !important;
   }
   .nav__item.is-open > .nav__dropdown {
-    max-height: 440px;
-    padding: 0.5rem !important;
+    display: block !important;
   }
   .nav__dropdown > div[class*="rotate-45"] {
     display: none;
@@ -193,6 +190,9 @@
 .quick-dock__panel {
   transform-origin: bottom right;
 }
+
+/* Header acima do overlay do menu mobile */
+#main-nav { z-index: 1200 !important; }
 
 /* ---- Form Focus Ring ---- */
 input:focus, select:focus, textarea:focus {
