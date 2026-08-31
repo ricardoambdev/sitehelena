@@ -21,9 +21,11 @@
     if (nav) {
       if (scrolled) {
         nav.style.height = "";
+        nav.style.top = "70px";
         nav.classList.add("bg-white", "backdrop-blur-xl", "shadow-sm");
       } else {
         nav.style.height = "";
+        nav.style.top = "";
         nav.classList.remove("bg-white", "backdrop-blur-xl", "shadow-sm", "border-b", "border-line");
       }
     }
