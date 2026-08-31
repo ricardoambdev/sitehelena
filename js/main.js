@@ -100,7 +100,12 @@
         burger.setAttribute("aria-expanded", "true");
         if (overlay) overlay.classList.add("opacity-0", "invisible");
         document.body.style.overflow = "hidden";
-        // drawer branco: forçar links e burger escuros
+        // drawer branco: forçar links, burger e logo escuros
+        if (navLogo) {
+          navLogo.classList.remove("brightness-0", "invert");
+          navLogo.style.height = "52px";
+          navLogo.style.marginTop = "0px";
+        }
         document.querySelectorAll(".nav__link").forEach(function (l) {
           l.classList.remove("text-white/80", "hover:text-white");
           l.classList.add("text-ink", "hover:text-brand");
