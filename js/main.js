@@ -103,7 +103,7 @@
         // drawer branco: forçar links, burger e logo escuros
         if (navLogo) {
           navLogo.classList.remove("brightness-0", "invert");
-          navLogo.style.height = "52px";
+          navLogo.style.height = "100px";
           navLogo.style.marginTop = "0px";
         }
         document.querySelectorAll(".nav__link").forEach(function (l) {
