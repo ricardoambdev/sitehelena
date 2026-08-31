@@ -65,6 +65,8 @@
       span.classList.remove("bg-ink", "bg-white");
       span.classList.add(scrolled ? "bg-ink" : "bg-white");
     });
+    var burgerEl = document.getElementById("nav-burger");
+    if (burgerEl) burgerEl.classList.toggle("raised", scrolled && isMobile);
   };
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
