@@ -104,7 +104,7 @@
         menu.classList.add("open");
         menu.classList.remove("hidden");
         menu.classList.add("lg:flex");
-        menu.style.cssText = "display:flex;position:fixed;top:0;left:0;width:100%;height:100dvh;background:white;flex-direction:column;align-items:stretch;padding:9.5rem 2.25rem 2rem 1.5rem;gap:0;z-index:1000;overflow-y:auto;";
+        menu.style.cssText = "display:flex;position:fixed;top:0;left:0;width:100%;max-width:100vw;height:100dvh;background:white;flex-direction:column;align-items:stretch;padding:9.5rem 1.25rem 2rem;gap:0;z-index:1000;overflow-y:auto;overflow-x:hidden;";
         burger.classList.add("open");
         burger.setAttribute("aria-expanded", "true");
         if (overlay) overlay.classList.add("opacity-0", "invisible");
