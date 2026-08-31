@@ -104,7 +104,7 @@
         if (navLogo) {
           navLogo.classList.remove("brightness-0", "invert");
           navLogo.style.height = "100px";
-          navLogo.style.marginTop = "0px";
+          navLogo.style.marginTop = "50px";
         }
         document.querySelectorAll(".nav__link").forEach(function (l) {
           l.classList.remove("text-white/80", "hover:text-white");
