@@ -29,7 +29,7 @@
     }
     if (navLogo) {
       navLogo.style.height = scrolled ? "48px" : "100px";
-      navLogo.style.marginTop = scrolled ? "" : "30px";
+      navLogo.style.marginTop = scrolled ? "" : "50px";
       if (scrolled) {
         navLogo.classList.remove("brightness-0", "invert");
       } else {
