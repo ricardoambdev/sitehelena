@@ -15,13 +15,17 @@
   /* ---------- Nav scrolled state ---------- */
   var nav = document.getElementById("main-nav");
   var navLogo = document.getElementById("nav-logo");
+  var lastY = 0;
   var onScroll = function () {
-    var scrolled = window.scrollY > 80;
+    var y = window.scrollY;
+    var scrolled = y > 80;
+    var goingUp = y < lastY;
+    lastY = y;
     var cta = document.getElementById("nav-cta");
     if (nav) {
       if (scrolled) {
         nav.style.height = "";
-        nav.style.top = "70px";
+        nav.style.top = goingUp ? "0" : "50px";
         nav.classList.add("bg-white", "backdrop-blur-xl", "shadow-sm");
       } else {
         nav.style.height = "";
