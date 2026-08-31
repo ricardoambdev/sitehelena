@@ -913,6 +913,34 @@
     render();
   })();
 
+  /* ---------- Vídeo institucional modal ---------- */
+  (function () {
+    var openBtn = document.getElementById("video-open");
+    var modal = document.getElementById("video-modal");
+    var frame = document.getElementById("video-frame");
+    if (!openBtn || !modal || !frame) return;
+    // TROQUE VIDEO_ID pelo ID real do vídeo institucional no YouTube
+    var src = "https://www.youtube.com/embed/VIDEO_ID?autoplay=1&rel=0";
+    function open() {
+      frame.src = src;
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+      document.body.style.overflow = "hidden";
+    }
+    function close() {
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+      frame.src = "";
+      document.body.style.overflow = "";
+    }
+    openBtn.addEventListener("click", open);
+    document.getElementById("video-close").addEventListener("click", close);
+    modal.addEventListener("click", function (e) { if (e.target === modal) close(); });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !modal.classList.contains("hidden")) close();
+    });
+  })();
+
   /* ---------- Current year ---------- */
   document.querySelectorAll("[data-year]").forEach(function (el) {
     el.textContent = new Date().getFullYear();
