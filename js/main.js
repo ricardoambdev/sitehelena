@@ -21,11 +21,12 @@
     var scrolled = y > 80;
     var goingUp = y < lastY;
     lastY = y;
+    var isMobile = window.matchMedia("(max-width: 1023px)").matches;
     var cta = document.getElementById("nav-cta");
     if (nav) {
       if (scrolled) {
         nav.style.height = "";
-        nav.style.top = goingUp ? "0" : "50px";
+        nav.style.top = isMobile && !goingUp ? "45px" : "0";
         nav.classList.add("bg-white", "backdrop-blur-xl", "shadow-sm");
       } else {
         nav.style.height = "";
