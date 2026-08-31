@@ -209,9 +209,31 @@ input.error, select.error, textarea.error {
   .hero { min-height: 100svh; }
   .hero__ctas { flex-direction: column; }
   .hero__ctas .btn { width: 100%; }
-  .quick-dock__trigger .quick-dock__label { display: none; }
-  .quick-dock__trigger { padding: 0.9rem; }
-  .quick-dock__panel { width: calc(100vw - 3rem); }
+  .quick-dock__trigger .quick-dock__label { display: none !important; }
+  .quick-dock__trigger { width: 52px !important; height: 52px !important; padding: 0 !important; justify-content: center !important; }
+  .quick-dock { bottom: 5.5rem !important; }
+  .whatsapp-float { bottom: 5.5rem !important; width: 52px !important; height: 52px !important; }
   .nav__cta--mobile .btn { width: 100%; }
-  .whatsapp-float { width: 52px; height: 52px; }
+}
+
+/* ---- Menu mobile fullpage ---- */
+@media (max-width: 1023px) {
+  .nav__menu.open {
+    display: flex !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100dvh !important;
+    background: #fff !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 6.5rem 1.5rem 2rem !important;
+    overflow-y: auto !important;
+    z-index: 1000 !important;
+  }
+  #nav-menu .nav__item { border-bottom: 1px solid #e5e7eb; }
+  #nav-menu .nav__link { padding: 1rem 0.5rem !important; font-size: 1.05rem !important; width: 100%; justify-content: space-between; }
+  #nav-menu .nav__dropdown { margin-top: 0.25rem; }
+  #nav-menu .nav__cta--mobile { margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid #e5e7eb; }
 }

@@ -21,10 +21,10 @@
     if (nav) {
       if (scrolled) {
         nav.style.height = "";
-        nav.classList.add("bg-white/80", "backdrop-blur-xl", "shadow-sm");
+        nav.classList.add("bg-white", "backdrop-blur-xl", "shadow-sm");
       } else {
         nav.style.height = "110px";
-        nav.classList.remove("bg-white/80", "backdrop-blur-xl", "shadow-sm", "border-b", "border-line");
+        nav.classList.remove("bg-white", "backdrop-blur-xl", "shadow-sm", "border-b", "border-line");
       }
     }
     if (navLogo) {
@@ -95,7 +95,7 @@
         menu.classList.add("open");
         menu.classList.remove("hidden");
         menu.classList.add("lg:flex");
-        menu.style.cssText = "display:flex;position:fixed;top:0;right:0;width:min(380px,88vw);height:100dvh;background:white;flex-direction:column;align-items:stretch;padding:5.5rem 1.5rem 2rem;gap:0;z-index:1000;overflow-y:auto;box-shadow:-8px 0 32px rgba(0,0,0,0.1);";
+        menu.style.cssText = "display:flex;position:fixed;top:0;left:0;width:100%;height:100dvh;background:white;flex-direction:column;align-items:stretch;padding:6.5rem 1.5rem 2rem;gap:0;z-index:1000;overflow-y:auto;";
         burger.classList.add("open");
         burger.setAttribute("aria-expanded", "true");
         if (overlay) overlay.classList.remove("opacity-0", "invisible");
