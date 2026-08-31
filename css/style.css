@@ -243,7 +243,7 @@ input.error, select.error, textarea.error {
     background: #fff !important;
     flex-direction: column !important;
     align-items: stretch !important;
-    padding: 9.5rem 1.5rem 2rem !important;
+    padding: 9.5rem 2.25rem 2rem 1.5rem !important;
     overflow-y: auto !important;
     z-index: 1000 !important;
   }
