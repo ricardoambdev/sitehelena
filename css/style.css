@@ -194,7 +194,6 @@
 /* Header acima do overlay do menu mobile */
 #main-nav {
   z-index: 1200 !important;
-  height: 100px !important;
 }
 
 /* ---- Form Focus Ring ---- */
