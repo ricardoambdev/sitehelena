@@ -2,14 +2,6 @@
    Colégio Helena — Tailwind CSS + Custom Animations
    ========================================================================== */
 
-/* ---- Reset / overflow global ---- */
-html, body {
-  overflow-x: hidden;
-  max-width: 100%;
-}
-html { overflow-x: clip; }
-#main-nav, main, footer, .section { max-width: 100%; }
-
 /* ---- Scrollbar ---- */
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: #f5f5f4; }
@@ -57,8 +49,8 @@ html { overflow-x: clip; }
   transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .reveal { transform: translateY(28px); }
-.reveal-left { transform: translateX(-28px); }
-.reveal-right { transform: translateX(28px); }
+.reveal-left { transform: translateX(-10px); }
+.reveal-right { transform: translateX(10px); }
 .reveal-scale { transform: scale(0.95); }
 .reveal.visible,
 .reveal-left.visible,
