@@ -27,11 +27,11 @@
       if (scrolled) {
         nav.style.height = "";
         nav.style.top = isMobile && !goingUp ? "45px" : "0";
-        nav.classList.add("bg-white", "backdrop-blur-xl", "shadow-sm");
+        nav.classList.add("bg-white", "shadow-sm");
       } else {
         nav.style.height = "";
         nav.style.top = "";
-        nav.classList.remove("bg-white", "backdrop-blur-xl", "shadow-sm", "border-b", "border-line");
+        nav.classList.remove("bg-white", "shadow-sm", "border-b", "border-line");
       }
     }
     if (navLogo) {
