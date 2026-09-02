@@ -110,12 +110,14 @@
 }
 
 /* ---- Dropdown visibility (desktop) ---- */
-.nav__item.has-dropdown:hover > .nav__dropdown,
-.nav__item.is-open > .nav__dropdown {
-  opacity: 1 !important;
-  visibility: visible !important;
-  pointer-events: auto !important;
-  transform: translateX(-50%) translateY(0) !important;
+@media (min-width: 1024px) {
+  .nav__item.has-dropdown:hover > .nav__dropdown,
+  .nav__item.is-open > .nav__dropdown {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    transform: translateX(-50%) translateY(0) !important;
+  }
 }
 
 /* ---- Hover bridge: fills the 12px gap between link and dropdown ---- */
@@ -149,10 +151,15 @@
     pointer-events: auto !important;
     max-height: 0 !important;
     overflow: hidden !important;
+    transition: none !important;
   }
   .nav__item.is-open > .nav__dropdown {
     max-height: 600px !important;
     padding: 0.5rem !important;
+    position: static !important;
+    left: 0 !important;
+    transform: none !important;
+    width: 100% !important;
   }
   .nav__dropdown a {
     display: block !important;
