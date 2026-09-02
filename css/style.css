@@ -270,5 +270,8 @@ input.error, select.error, textarea.error {
   #nav-menu .nav__link { padding: 0.7rem 0.5rem !important; font-size: 1.05rem !important; width: 100%; justify-content: space-between; }
   #nav-menu .nav__link .chevron-icon { font-size: 24px !important; }
   #nav-menu .nav__dropdown { margin-top: 0.25rem; }
-  #nav-menu .nav__cta--mobile { margin-top: 3.5rem !important; padding-top: 1.25rem; border-top: 1px solid #e5e7eb; }
+  #nav-menu .nav__link, #nav-menu .nav__dropdown a { min-height: 48px; }
+  #nav-menu #nav-cta-mobile { margin-top: 30px !important; gap: 0 !important; padding-top: 0 !important; border-top: 0 !important; }
+  #nav-menu #nav-cta-mobile a { margin-top: 0 !important; }
+  #nav-menu #nav-cta-mobile a + a { margin-top: 30px !important; }
 }
