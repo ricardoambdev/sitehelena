@@ -265,6 +265,8 @@ input.error, select.error, textarea.error {
     z-index: 1000 !important;
   }
   #nav-menu .nav__item { border-bottom: 1px solid #e5e7eb; }
+  #nav-menu .nav__item.has-dropdown { border-bottom: none !important; }
+  #nav-menu .nav__dropdown a { font-size: 1.05rem !important; }
   #nav-menu .nav__link { padding: 1rem 0.5rem !important; font-size: 1.05rem !important; width: 100%; justify-content: space-between; }
   #nav-menu .nav__link .chevron-icon { font-size: 24px !important; }
   #nav-menu .nav__dropdown { margin-top: 0.25rem; }
