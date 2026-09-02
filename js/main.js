@@ -931,11 +931,11 @@
     document.querySelectorAll("#blog-filters [data-filter]").forEach(function (b) {
       b.addEventListener("click", function () {
         document.querySelectorAll("#blog-filters [data-filter]").forEach(function (x) {
-          x.classList.remove("bg-ink", "text-white");
-          x.classList.add("bg-mist", "text-ink-soft");
+          x.classList.remove("bg-ink", "text-white", "hover:text-white");
+          x.classList.add("bg-mist", "text-ink-soft", "hover:text-ink");
         });
-        b.classList.add("bg-ink", "text-white");
-        b.classList.remove("bg-mist", "text-ink-soft");
+        b.classList.add("bg-ink", "text-white", "hover:text-white");
+        b.classList.remove("bg-mist", "text-ink-soft", "hover:text-ink");
         currentCat = b.dataset.filter;
         currentPage = 1;
         render();
