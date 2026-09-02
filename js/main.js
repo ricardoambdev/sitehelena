@@ -26,7 +26,7 @@
     if (nav) {
       if (scrolled) {
         nav.style.height = "";
-        nav.style.top = isMobile && !goingUp ? "15px" : "0";
+        nav.style.top = isMobile && !goingUp ? "-5px" : "0";
         nav.classList.add("bg-white", "shadow-sm");
       } else {
         nav.style.height = "";
